@@ -5,7 +5,7 @@ resource "azurerm_virtual_machine" "this" {
   network_interface_ids = [var.network_interface_id]
   vm_size               = var.vm_size
 
-  delete_os_disk_on_termination = true
+  delete_os_disk_on_termination    = true
   delete_data_disks_on_termination = true
 
   storage_os_disk {
@@ -29,7 +29,7 @@ resource "azurerm_virtual_machine" "this" {
   }
 
   os_profile_linux_config {
-    disable_password_authentication = false
+    disable_password_authentication = true
   }
 
   tags = var.tags
